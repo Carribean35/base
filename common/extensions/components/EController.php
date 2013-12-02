@@ -12,9 +12,15 @@
  */
 class EController extends CController
 {
+	const DESKTOP_MENU_ITEM = "desktop";
+	const ACCESS_MENU_ITEM = "access";
+	
 	public $meta_keywords = array();
 	public $meta_description = array();
 	public $breadcrumbs;
+	public $breadcrumbs_button;
+	public $menuActiveItems = array();
+	public $title_h3;
 
 
 	/**

@@ -1,106 +1,130 @@
-<?php
-/**
- *
- * main.php layout
- *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
- * @link http://www.2amigos.us/
- * @copyright 2013 2amigOS! Consultation Group LLC
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- */
-?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 2.3.2
+Version: 1.4
+Author: KeenThemes
+Website: http://www.keenthemes.com/preview/?theme=metronic
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<style>
-		body {
-			padding-top: 60px;
-			padding-bottom: 40px;
-		}
-	</style>
-
-	<link rel="stylesheet" href="css/main.css">
-
-	<script src="js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<meta charset="utf-8" />
+	<title>Metronic | Admin Dashboard Template</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->        
+	<link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<link rel="shortcut icon" href="favicon.ico" />
 </head>
-<body>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-	your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
-	improve your experience.</p>
-<![endif]-->
-
-<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			<a class="brand" href="#">Project name</a>
-
-			<div class="nav-collapse collapse">
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="nav-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul>
-					</li>
-				</ul>
-				<form class="navbar-form pull-right">
-					<input class="span2" type="text" placeholder="Email">
-					<input class="span2" type="password" placeholder="Password">
-					<button type="submit" class="btn">Sign in</button>
-				</form>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<!-- BEGIN HEADER -->   
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="index.html">
+				<img src="/img/logo.png" alt="logo" />
+				</a>
+				<!-- END LOGO -->
 			</div>
-			<!--/.nav-collapse -->
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<?php $this->renderPartial('//partial/sidebar') ?>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+							<?php if (isset($this->title_h3)) : ?>
+								<?php $this->widget('Title', array('title'=>$this->title_h3)); ?>
+							<?php endif; ?>
+							<?php if(isset($this->breadcrumbs)):?>
+								<?php $this->widget('application.components.Breadcrumbs', array(
+									'links'=>$this->breadcrumbs,
+									'button'=>$this->breadcrumbs_button,
+									'tagName'=>'ul',
+									'htmlOptions'=>array('class'=>'breadcrumb'),
+									'separator'=>'<li><i class="icon-angle-right"></i></li>',
+									'activeLinkTemplate'=>'<li><a href="{url}">{label}</a></li>',
+									'inactiveLinkTemplate'=>'<li>{label}</li>',
+									'homeLink'=>'<li><i class="icon-home"></i> '.CHtml::link('Домой', Yii::app()->homeUrl).'</li>',
+								)); ?>
+							<?php endif?>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<?php echo $content; ?>
+				<!-- END PAGE CONTENT-->						
+			</div>
+			<!-- END PAGE CONTAINER-->    
+		</div>
+		<!-- END PAGE -->
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="footer-inner">
+			
+		</div>
+		<div class="footer-tools">
+			<span class="go-top">
+			<i class="icon-angle-up"></i>
+			</span>
 		</div>
 	</div>
-</div>
-
-<?php echo $content; ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="js/libs/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script><script>
-	var _gaq = [
-		['_setAccount', 'UA-XXXXX-X'],
-		['_trackPageview']
-	];
-	(function (d, t) {
-		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-		g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g, s)
-	}(document, 'script'));
-</script>
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->   
+	<script src="/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript" ></script>
+	<!--[if lt IE 9]>
+	<script src="/plugins/excanvas.min.js"></script>
+	<script src="/plugins/respond.min.js"></script>  
+	<![endif]-->   
+	<script src="/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="/plugins/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="/scripts/app.js" type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->  
+	<script>
+		jQuery(document).ready(function() {    
+		   App.init(); // initlayout and core plugins
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
 </body>
+<!-- END BODY -->
 </html>
