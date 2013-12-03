@@ -11,6 +11,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
+	<script src="/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
 	<meta charset="utf-8" />
 	<title>Metronic | Admin Dashboard Template</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -22,6 +23,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<link href="/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/style-metro.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/mystyle.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/style-responsive.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
@@ -101,7 +103,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<!-- END FOOTER -->
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 	<!-- BEGIN CORE PLUGINS -->   
-	<script src="/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
 	<script src="/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 	<script src="/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
@@ -118,6 +119,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="/scripts/app.js" type="text/javascript"></script>
+	<script src="/scripts/myscripts.js" type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->  
 	<script>
 		jQuery(document).ready(function() {    

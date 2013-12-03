@@ -71,8 +71,12 @@ class EController extends CController
 	{
 		if (isset($_POST['ajax']) && $_POST['ajax'] === $model->formId)
 		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
+			$err = CActiveForm::validate($model);
+			if ($err != '[]') 
+			{
+				echo $err;
+				Yii::app()->end();
+			}
 		}
 	}
 
