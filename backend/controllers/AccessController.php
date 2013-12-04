@@ -4,7 +4,7 @@
  * AccessController class
  *
  */
-class AccessController extends EController
+class AccessController extends RController
 {
 	public function actionIndex()
 	{
