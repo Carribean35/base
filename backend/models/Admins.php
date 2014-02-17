@@ -34,7 +34,6 @@ class Admins extends EActiveRecord
 		return array(
 			array('email', 'required'),
 			array('email', 'length', 'max'=>100),
-			array('email', 'email'),
 			array('email', 'unique', 'className' => 'Admins', 'attributeName' => 'email', 'caseSensitive' => true),
 			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => Yii::t('main','Confirm Password Validate Error'),),
 			array('password', 'compare', 'compareAttribute'=>'confirmPassword', 'message' => Yii::t('main','Confirm Password Validate Error'),),

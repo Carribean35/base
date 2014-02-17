@@ -354,9 +354,13 @@ Header and header elements.
   padding-right: 0;
   width: 225px;
 }
+.header.navbar .brand {
+	padding: 6px 0;
+}
 
 .header .brand img {
   margin-left: 20px;
+  width: 100px;
 }
 
 .header .btn-navbar {
@@ -5473,4 +5477,15 @@ div.checker.disabled.active span{
 div.checker.disabled:hover,
 div.radio.disabled:hover {
     cursor: not-allowed;  
+}
+
+.form-horizontal .form-control-static {
+	padding-top: 7px;
+	font-size: 14px;
+}
+
+.main-gallery .span3 {
+	margin-left: 0;
+	margin-right: 1.5%;
+	
 }

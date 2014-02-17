@@ -12,7 +12,7 @@ $this->breadcrumbs_button = '<li class="pull-right no-text-shadow">
 								<a class="btn blue dash-btn" href="'.$this->createUrl('access/item').'"><i class="icon-plus"></i>Добавить запись</a>
 							</li>';
 
-$this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
+$this->menuActiveItems[BController::ACCESS_MENU_ITEM] = 1;
 ?>
 <div>
 	
@@ -47,7 +47,7 @@ $this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
 								'imageUrl'=>false,
 								'options'=>array('class'=>'btn mini blue-stripe'),
 								'url'=>function($data) {
-									return $this->createUrl('access/item', array('id'=>$data['id']));
+									return '/access/item/'.$data['id'].'/';
 								},
 							),
 							'add'=>array(
@@ -56,7 +56,7 @@ $this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
 								'options'=>array('class'=>'btn mini red-stripe'),
 								'click'=>'confirmDelete',
 								'url'=>function($data) {
-									return $this->createUrl('access/delete', array('id'=>$data['id']));
+									return '/access/delete/'.$data['id'].'/';
 								},
 							),
 						),

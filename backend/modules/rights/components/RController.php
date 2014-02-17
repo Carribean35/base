@@ -6,7 +6,7 @@
 * @copyright Copyright &copy; 2010 Christoffer Niska
 * @since 0.6
 */
-class RController extends EController
+class RController extends BController
 {
 	/**
 	* @property string the default layout for the controller view. Defaults to '//layouts/column1',

@@ -18,5 +18,8 @@ return array(
 			'enableParamLogging' => true,
 			'charset' => 'utf8',
 		),
+		'mailer' => array(
+			'class' => 'common.extensions.mailer.EMailer',
+		),
 	),
 );

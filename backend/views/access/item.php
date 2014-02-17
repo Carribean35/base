@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 	$header
 );
 
-$this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
+$this->menuActiveItems[BController::ACCESS_MENU_ITEM] = 1;
 ?>
 <div>
 
@@ -20,7 +20,7 @@ $this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
 			'validateOnSubmit'=>true,
 			'validateOnChange'=>false,
 			'errorCssClass'=>'error',
-			'afterValidate'=>'js:contentAfterValidate',
+			'afterValidate'=>'js:contentAfterAjaxValidate',
 		),
 		'htmlOptions'=>array('class'=>'form-horizontal', 'rel' => $this->createUrl('access/index')),
 
@@ -52,6 +52,9 @@ $this->menuActiveItems[EController::ACCESS_MENU_ITEM] = 1;
 		
 		<div class="form-actions large">
 			<?php echo CHtml::htmlButton('<i class="icon-ok"></i> Сохранить', array('class' => 'btn blue', 'type' => 'submit')); ?>
+			<?php if (!empty($model->id)) : ?>
+				<a href="/access/delete/<?php echo $model->id?>/" onclick="return confirmDelete()"><?php echo CHtml::htmlButton('<i class="icon-remove"></i> Удалить', array('class' => 'btn red', 'type' => 'button')); ?></a>
+			<?php endif;?>
 			<?php echo CHtml::htmlButton('Отменить', array('class' => 'btn', 'type' => 'reset')); ?>
 		</div>
 		

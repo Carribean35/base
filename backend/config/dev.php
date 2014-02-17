@@ -75,10 +75,14 @@ return array(
 			'showScriptName' => false,
 
 			'rules' => array(
+				'<controller:(catalog)>/<action:(section|dish)>/<pid:\d+>/<id:\d+>'=>'<controller>/<action>',
+				'<controller:(catalog)>/<action:(section|dish)>/<pid:\d+>'=>'<controller>/<action>',
+			
 				// default rules
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+				
 				
 				'<module:\w+>/<controller:\w+>'=>'<module>/<controller>/index',
 				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
@@ -105,6 +109,9 @@ return array(
 		'authManager'=>array(
 			'class'=>'RDbAuthManager',
 			'defaultRoles' => array('Guest')
+		),
+		'ih'=>array(
+				'class'=>'CImageHandler',
 		),
 	),
 	'params' => array(

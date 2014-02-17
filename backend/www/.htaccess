@@ -330,9 +330,12 @@ FileETag None
 # performance impact: http://goo.gl/Mluzd
 
 <IfModule mod_rewrite.c>
-  Options +FollowSymlinks
-# Options +SymLinksIfOwnerMatch
   RewriteEngine On
+  Options +FollowSymlinks
+  RewriteBase /
+#  Options +FollowSymlinks
+# Options +SymLinksIfOwnerMatch
+#  RewriteEngine On
 # RewriteBase /
 # If you are in a sub folder of your web root you
 # might have to enable something like this:

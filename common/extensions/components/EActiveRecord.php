@@ -12,6 +12,32 @@
  */
 class EActiveRecord extends CActiveRecord
 {
+	private $_imagesPath;
+	private $_imagesUrl;
+	private $_imageSizes;
+	
+	public $image;
+	
+	public function getImagesPath() {
+		return $this->_imagesPath;
+	}
+	public function setImagesPath($data) {
+		$this->_imagesPath = $data;
+	}
+	
+	public function getImagesUrl() {
+		return $this->_imagesUrl;
+	}
+	public function setImagesUrl($data) {
+		$this->_imagesUrl = $data;
+	}
+	
+	public function getImageSizes() {
+		return $this->_imageSizes;
+	}
+	public function setImageSizes($data) {
+		$this->_imageSizes = $data;
+	}
 	/**
 	 * default form ID for the current model. Defaults to get_class()+'-form'
 	 */
@@ -114,6 +140,45 @@ class EActiveRecord extends CActiveRecord
 	{
 		$this->logUpdate();
 		return parent::beforeSave();
+	}
+	
+	public function saveImage($filePath) {
+		if (!file_exists($this->imagesPath.'original/'))
+			mkdir($this->imagesPath.'original/');
+		if (!file_exists($this->imagesPath.'admin_preview/'))
+			mkdir($this->imagesPath.'admin_preview/');
+			
+		$ih = Yii::app()->ih
+		->load($filePath)
+		->save($this->imagesPath.'original/'.$this->id.".jpg")
+		->adaptiveThumb(200,150)
+		->save($this->imagesPath.'admin_preview/'.$this->id.".jpg");
+			
+		foreach ($this->imageSizes AS $key => $val) {
+			if (!file_exists($this->imagesPath.$val[0].'x'.$val[1].'/'))
+				mkdir($this->imagesPath.$val[0].'x'.$val[1].'/');
+			$ih->reload();
+			if ($val[0] == false || $val[1] == false) {
+				if (!empty($val[0]) && $ih->getWidth() > $val[0] || !empty($val[1]) && $ih->getHeight() > $val[1])
+					$ih->resize($val[0], $val[1]);
+			} else {
+				$ih->adaptiveThumb($val[0], $val[1]);
+			}
+			$ih->save($this->imagesPath.$val[0].'x'.$val[1].'/'.$this->id.".jpg");
+		}
+	}
+
+	public function deleteFull() {
+		if (file_exists($this->imagesPath.'original/'.$this->id.".jpg"))
+			unlink($this->imagesPath.'original/'.$this->id.".jpg");
+		if (file_exists($this->imagesPath.'admin_preview/'.$this->id.".jpg"))
+			unlink($this->imagesPath.'admin_preview/'.$this->id.".jpg");
+	
+		foreach($this->_imageSizes AS $key => $val) {
+			if (file_exists($this->imagesPath.$val[0].'x'.$val[1].'/'.$this->id.".jpg"))
+				unlink($this->imagesPath.$val[0].'x'.$val[1].'/'.$this->id.".jpg");
+		}
+		$this->delete();
 	}
 
 }

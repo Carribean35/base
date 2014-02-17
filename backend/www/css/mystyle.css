@@ -6,3 +6,7 @@
 .btn.dash-btn i {
     color: inherit !important;
 }
+.listImg {
+	max-height: 100px;
+	max-width: 100px;	
+}

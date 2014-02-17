@@ -33,5 +33,18 @@ return array(
 		// php configuration
 		'php.defaultCharset' => 'utf-8',
 		'php.timezone'       => 'UTC',
+		'smtp' => array(
+				"host" => "smtp.yandex.ru", //smtp сервер
+				"debug" => 0, //отображение информации дебаггера (0 - нет вообще)
+				"auth" => true, //сервер требует авторизации
+				"port" => 25, //порт (по-умолчанию - 25)
+				"username" => "restoran-gosty", //имя пользователя на сервере
+				"password" => "y6xOxyT2QC", //пароль
+				"addreply" => "restoran-gosty@yandex.ru", //ваш е-mail
+				"replyto" => "", //e-mail ответа
+				"fromname" => "restoran-gosty.ru", //имя
+				"from" => "restoran-gosty@yandex.ru", //от кого
+				"charset" => "utf-8", //от кого
+		)
 	)
 );
