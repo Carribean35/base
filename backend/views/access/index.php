@@ -31,12 +31,8 @@ $this->menuActiveItems[BController::ACCESS_MENU_ITEM] = 1;
 						'name'=>'id',
 					),
 					array(
-						'header'=>Yii::t('main','Email'),
-						'name'=>'email',
-					),
-					array(
-						'header'=>Yii::t('main','Last Visit'),
-						'name'=>'lastVisit',
+						'header'=>Yii::t('main','Login'),
+						'name'=>'login',
 					),
 					array(
 						'header'=>Yii::t('main','Actions'),

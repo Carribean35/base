@@ -13,27 +13,7 @@ class SiteController extends RController
 {
 	public function actionIndex()
 	{
-		$site = new Site();
-		
-		if(isset($_POST['Site'])) {
-			$site->attributes=$_POST['Site'];
-			
-			$this->performAjaxValidation($site);
-			if($site->save()) {
-				$err = false;
-			} else {
-				$err = true;
-			}
-			echo CJSON::encode(
-				array(
-						'error'=>$err,
-				)
-			);
-			Yii::app()->end();
-			
-		}
-		
-		$this->render('index', array('site' => $site));
+		$this->render('index');
 	}
 	
 	public function actionError()

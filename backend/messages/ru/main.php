@@ -2,6 +2,7 @@
 return array(
 	'ID'=>'#',
 	'Email'=>'E-mail',
+	'Login'=>'Логин',
 	'Last Visit'=>'Последний вход',
 	'Actions'=>'Действия',
 	'Password'=>'Пароль',

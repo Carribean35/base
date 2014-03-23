@@ -10,3 +10,8 @@
 	max-height: 100px;
 	max-width: 100px;	
 }
+
+ul.yiiPager {
+	margin: 0;
+	padding: 0;
+}

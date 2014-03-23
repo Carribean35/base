@@ -1,6 +1,6 @@
 <?php
 
-class Site extends CFormModel
+class Settings extends CFormModel
 {
 
 	public $emailAdmin;
@@ -10,7 +10,7 @@ class Site extends CFormModel
     public function init()
     {
     	parent::init();
-    	$this->file = YiiBase::getPathOfAlias('common').'/data/site/site.txt';
+    	$this->file = YiiBase::getPathOfAlias('common').'/data/settings/settings.txt';
     	
     	if (file_exists($this->file)) {
     		

@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'admins':
  * @property integer $id
- * @property string $email
+ * @property string $login
  * @property string $password
  */
 class Admins extends EActiveRecord
@@ -32,14 +32,14 @@ class Admins extends EActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email', 'required'),
-			array('email', 'length', 'max'=>100),
-			array('email', 'unique', 'className' => 'Admins', 'attributeName' => 'email', 'caseSensitive' => true),
+			array('login', 'required'),
+			array('login', 'length', 'max'=>100),
+			array('login', 'unique', 'className' => 'Admins', 'attributeName' => 'login', 'caseSensitive' => true),
 			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => Yii::t('main','Confirm Password Validate Error'),),
 			array('password', 'compare', 'compareAttribute'=>'confirmPassword', 'message' => Yii::t('main','Confirm Password Validate Error'),),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, password', 'safe', 'on'=>'search'),
+			array('id, login, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +61,7 @@ class Admins extends EActiveRecord
 	{
 		return array(
 			'id' => Yii::t('main','ID'),
-			'email' => Yii::t('main','Email'),
+			'login' => Yii::t('main','Login'),
 			'password' => Yii::t('main','Password'),
 			'confirmPassword' => Yii::t('main','Confirm Password'),
 		);
@@ -86,7 +86,7 @@ class Admins extends EActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('email',$this->email,true);
+		$criteria->compare('login',$this->login,true);
 		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(

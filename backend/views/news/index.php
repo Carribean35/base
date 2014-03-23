@@ -70,5 +70,6 @@ $this->menuActiveItems[BController::NEWS_MENU_ITEM] = 1;
 						'template'=>'{view} {add}',
 					),
 				),
+				'pager'=>array('cssFile'=>false),
 			)); ?>
 </div>

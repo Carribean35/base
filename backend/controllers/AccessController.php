@@ -35,6 +35,11 @@ class AccessController extends RController
 			if(empty($model->password))
 				unset($model->password);
 			if($model->save()) {
+				
+				$connection=Yii::app()->db;
+				$command=$connection->createCommand("REPLACE INTO AuthAssignment (itemname, userid, bizrule, data) VALUES ('Moderator', ".$model->id.", NULL, 'N;')");
+				$command->execute();
+				
 				$err = false;
 			} else {
 				$err = true;
@@ -52,6 +57,11 @@ class AccessController extends RController
 	
 	public function actionDelete($id) {
 		Admins::model()->deleteByPk($id);
+		
+		$connection=Yii::app()->db;
+		$command=$connection->createCommand("DELETE FROM AuthAssignment WHERE userid=".$id);
+		$command->execute();
+		
 		$this->redirect($this->createUrl('access/index'));
 	}
 }

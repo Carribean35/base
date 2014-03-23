@@ -27,10 +27,10 @@ $this->menuActiveItems[BController::ACCESS_MENU_ITEM] = 1;
 	)); ?>
 
 		<div class="control-group">
-			<?php echo $form->label($model,'email',array('class'=>'control-label')); ?>
+			<?php echo $form->label($model,'login',array('class'=>'control-label')); ?>
 			<div class="controls">
-				<?php echo $form->textField($model,'email',array('class'=>'m-wrap medium')); ?>
-				<span class="help-inline"><?php echo $form->error($model,'email'); ?></span>
+				<?php echo $form->textField($model,'login',array('class'=>'m-wrap medium')); ?>
+				<span class="help-inline"><?php echo $form->error($model,'login'); ?></span>
 			</div>
 		</div>
 		

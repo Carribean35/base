@@ -6,7 +6,6 @@
  * The followings are the available columns in table 'news':
  * @property integer $id
  * @property string $name
- * @property string $name2
  * @property string $createDate
  * @property string $text
  * @property integer $visible
@@ -40,11 +39,11 @@ class News extends EActiveRecord
 		return array(
 			array('name, createDate', 'required'),
 			array('visible', 'numerical', 'integerOnly'=>true),
-			array('name, name2', 'length', 'max'=>64),
+			array('name', 'length', 'max'=>64),
 			array('createDate, text, visible', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, name2, createDate, text, visible', 'safe', 'on'=>'search'),
+			array('id, name, createDate, text, visible', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,7 +66,6 @@ class News extends EActiveRecord
 		return array(
 			'id' => Yii::t('main', 'ID'),
 			'name' => Yii::t('main', 'Name'),
-			'name2' => Yii::t('main', 'Name'),
 			'createDate' => Yii::t('main', 'Create Date'),
 			'text' => Yii::t('main', 'Text'),
 			'visible' => Yii::t('main', 'Visible'),
@@ -95,7 +93,6 @@ class News extends EActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('name2',$this->name2,true);
 		$criteria->compare('createDate',$this->createDate,true);
 		$criteria->compare('text',$this->text,true);
 		$criteria->compare('visible',$this->visible);

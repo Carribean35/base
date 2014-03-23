@@ -22,15 +22,6 @@
 			</a>
 		</li>
 		<?php endif;?>
-		<?php if(Yii::app()->user->checkAccess('Access.*')): ?>
-		<li class="start <?php if (!empty($this->menuActiveItems[BController::ACCESS_MENU_ITEM])) { echo 'active'; } ?>">
-			<a href="<?php echo $this->createUrl('access/index') ?>">
-				<i class="icon-key"></i> 
-				<span class="title">Права доступа</span>
-				<span class="selected"></span>
-			</a>
-		</li>
-		<?php endif;?>
 		<?php if(Yii::app()->user->checkAccess('News.*')): ?>
 		<li class="start <?php if (!empty($this->menuActiveItems[BController::NEWS_MENU_ITEM])) { echo 'active'; } ?>">
 			<a href="<?php echo $this->createUrl('news/index') ?>">
@@ -40,11 +31,20 @@
 			</a>
 		</li>
 		<?php endif;?>
-		<?php if(Yii::app()->user->checkAccess('Pages.*')): ?>
-		<li class="start <?php if (!empty($this->menuActiveItems[BController::PAGES_MENU_ITEM])) { echo 'active'; } ?>">
-			<a href="<?php echo $this->createUrl('pages/index') ?>">
-				<i class="icon-coffee"></i>
-				<span class="title">Типовые страницы</span>
+		<?php if(Yii::app()->user->checkAccess('Settings.*')): ?>
+		<li class="start <?php if (!empty($this->menuActiveItems[BController::SETTINGS_MENU_ITEM])) { echo 'active'; } ?>">
+			<a href="<?php echo $this->createUrl('settings/index') ?>">
+				<i class="icon-wrench"></i>
+				<span class="title">Настройки</span>
+				<span class="selected"></span>
+			</a>
+		</li>
+		<?php endif;?>
+		<?php if(Yii::app()->user->checkAccess('Access.*')): ?>
+		<li class="start <?php if (!empty($this->menuActiveItems[BController::ACCESS_MENU_ITEM])) { echo 'active'; } ?>">
+			<a href="<?php echo $this->createUrl('access/index') ?>">
+				<i class="icon-key"></i> 
+				<span class="title">Права доступа</span>
 				<span class="selected"></span>
 			</a>
 		</li>

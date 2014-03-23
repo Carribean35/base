@@ -12,31 +12,23 @@ $this->breadcrumbs=array(
 $this->menuActiveItems[BController::NEWS_MENU_ITEM] = 1;
 
 Yii::app()->clientScript->registerScriptFile(
-	Yii::app()->assetManager->publish(
-		Yii::getPathOfAlias('webroot').'/plugins/bootstrap-fileupload/bootstrap-fileupload.js'
-	),
+	'/plugins/bootstrap-fileupload/bootstrap-fileupload.js',
 	CClientScript::POS_END
 );
 
 Yii::app()->clientScript->registerCssFile(
-	Yii::app()->assetManager->publish(
-		Yii::getPathOfAlias('webroot').'/plugins/bootstrap-fileupload/bootstrap-fileupload.css'
-	),
+	'/plugins/bootstrap-fileupload/bootstrap-fileupload.css',
 	'',
 	CClientScript::POS_END
 );
 
 Yii::app()->clientScript->registerScriptFile(
-	Yii::app()->assetManager->publish(
-		Yii::getPathOfAlias('webroot').'/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'
-	),
+	'/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
 	CClientScript::POS_END
 );
 
 Yii::app()->clientScript->registerCssFile(
-	Yii::app()->assetManager->publish(
-		Yii::getPathOfAlias('webroot').'/plugins/bootstrap-datepicker/css/datepicker.css'
-	),
+	'/plugins/bootstrap-datepicker/css/datepicker.css',
 	'',
 	CClientScript::POS_END
 );
@@ -86,7 +78,6 @@ if (!empty($model->id) && file_exists($model->imagesPath.'admin_preview/'.$model
 			<?php echo $form->label($model,'name',array('class'=>'control-label')); ?>
 			<div class="controls">
 				<?php echo $form->textField($model,'name',array('class'=>'m-wrap large')); ?><br>
-				<?php echo $form->textField($model,'name2',array('class'=>'m-wrap large')); ?>
 				<span class="help-inline"><?php echo $form->error($model,'name'); ?></span>
 			</div>
 		</div>
